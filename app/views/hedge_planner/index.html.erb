@@ -1,0 +1,23 @@
+<h1 id="hedge_plan_header">Hedge Planner</h1>
+
+<div class="planner_instructions">
+	<h2>Instructions:</h2>
+	
+	<p>Use the "Hedge Planner" to estimate how many trees you might need to create the hedge of your dreams.</p>
+	
+	<ol>
+		<li><p>Select the potted size of the plant. 1-gallons are about 10 inches wide and 5-gallon plants are about 15 inches wide.</li></p>
+		<li><p>Enter the total length you want the hedge.</p></li>
+		<li><p>How much gap do you want between the trees?</p></li> 
+		<li><p>How many years you can wait for your ideal hedge to be what you want it to be.</p></li>
+	</ol>
+	
+	<p>The longer you wait the fewer trees you need but the average growth is eight inches per year so maybe you can't wait and need that perfect hedge now. Leave the "gap" and "years" fields blank if you're that impatient. </p>
+</div>
+
+<%= csrf_meta_tag %>
+
+<div id="planner_placement">
+	<%= render 'form' %>
+</div>
+

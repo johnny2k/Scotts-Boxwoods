@@ -1,0 +1,2 @@
+module HedgePlannerHelper
+end

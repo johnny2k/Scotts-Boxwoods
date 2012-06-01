@@ -1,0 +1,22 @@
+<div class="hedgeplan">
+	<%= form_tag("/hedge_planner", :method => "get", :remote => "true") do %>
+    <%= label_tag(:pot_size, "Select a pot size") %>	
+    <%= select_tag(:pot_size, options_for_select([['1-Gallon', 1], ['5-gallon', 2]], 2)) %><br />
+   	  
+		<%= label_tag(:length, "Hedge length:") %><br />
+		<%= text_field_tag(:length) %><br />
+	
+    <%= label_tag(:distance, "Gap between shrubs:") %><br />
+    <%= text_field_tag(:distance) %><br />
+    
+    <%= label_tag(:years, "Years willing to wait:") %><br />
+    <%= text_field_tag(:years) %><br />
+		
+		<%= button_tag 'Submit' %>
+
+	<% end %>
+
+</div>
+
+<div class="plan_result">
+</div>

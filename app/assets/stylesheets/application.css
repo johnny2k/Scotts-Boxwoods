@@ -1,0 +1,125 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+body {
+	background: url(logo.png);
+	background-repeat: no-repeat;
+	background-size: 711px 135px;
+	background-position: 400px 10px;
+	left: 500px;
+	width: 500px;
+}
+
+#links {
+	margin: 155px 0 20px 0 ;
+	width: 500px;
+	background-color: white;
+	position: relative;
+	left: 470px;
+	
+}
+
+li.button {
+	border-style: double solid double solid;
+	display: inline;
+}
+
+
+#nostyle {
+	list-style: none;
+	display: inline;
+	list-style-position: inside;
+	width: 400px;
+}
+
+#info {
+	border: 5px solid green;
+	margin: 9% 50% 0 20 px;
+	padding: 10px 10px 10px 10px;
+	background-color: white;
+	position: relative;
+	left: 20px;
+	top: -300px;
+	width: 270px;
+}
+
+table.requests {
+	background-color: white;
+	border-style: solid;
+ 	border-width: medium;	
+	border-color: black;
+	position: relative;
+	left: 20px;
+	top: 10px;
+}
+
+h1.page_header {
+	margin: 10% 0 0 0;
+	color: black;
+}
+
+.hedge_results {
+	border-style:solid;
+	border-color: black;
+	border-width: 5px;
+}
+
+#show_order {
+	background-color: white;
+	margin: 90px 20px 0 0;
+}
+
+.hedge_planner {
+	margin: 10px;
+	width: 200px;
+	background-color: white;
+}
+
+#planner_placement {
+	position: relative;
+	left: 800px;
+	top: -280px;
+}
+
+.planner_instructions {
+	position: relative;
+	left: 200px;
+	top: 30px;
+}
+
+#hedge_plan_header {
+	position: relative;
+	left: 540px;
+	top: 30px;
+}
+
+.home_hedge_planner {
+	border-style: solid;
+	border-color: black;
+	position: relative;
+	left: 1100px;
+	top: -25px;
+	width: 210px;
+}
+
+.home_images {
+	position: relative;
+	top: -620px;
+	left: 380px;
+	display:inline;
+}
+
+.other_picture {
+	position: relative;
+	top: -924px;
+	left: 650px;

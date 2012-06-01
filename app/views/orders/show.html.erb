@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<div id=show_order>
+  <p>
+    <b>Name:</b>
+    <%= @order.name %>
+  </p>
+
+  <p>
+    <b>Phone:</b>
+    <%= @order.phone %>
+  </p>
+
+  <p>
+    <b>Email:</b>
+    <%= @order.email %>
+		</p>
+
+  <p>
+    <b>Address:</b>
+    <%= @order.address%>
+  </p>
+  <p>
+    <b>One Gallon Quantity:</b>
+    <%= @order.one_gal_quant%>
+  </p>
+  <p>
+    <b>Five Gallon Quantity:</b>
+    <%= @order.five_gal_quant%>
+  </p>
+  <p>
+    <b>Irrigation:</b>
+    <%= @order.irrigation %>
+  </p>
+  <p>
+    <b>Created:</b>
+    <%= @order.created_at %>
+  </p>
+  <p>
+    <b>Updated:</b>
+    <%= @order.updated_at%>
+  </p>
+  <p>
+
+</div>
+
+<%= link_to 'Edit', edit_order_path(@order), :style => "background-color: #debf68" %> |
+<%= link_to 'Back', orders_path, :style => "background-color: #debf68" %>
