@@ -10,18 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120508205317) do
+ActiveRecord::Schema.define(:version => 20120604053627) do
 
   create_table "orders", :force => true do |t|
     t.string   "name"
     t.string   "phone"
     t.string   "email"
-		t.string   "address"
-		t.integer  "one_gal_quant"
-		t.integer  "five_gal_quant"
-    t.boolean  "irrigation"    
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "address"
+    t.integer  "one_gal_quant"
+    t.integer  "five_gal_quant"
+    t.boolean  "irrigation"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "image"
+    t.decimal  "price"
+    t.integer  "stock"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

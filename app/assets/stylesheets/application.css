@@ -11,17 +11,20 @@
  *= require_self
  *= require_tree .
 */
+
+#logo {
+	position: relative;
+	left: 300px;
+}
+
+
 body {
-	background: url(logo.png);
-	background-repeat: no-repeat;
-	background-size: 711px 135px;
-	background-position: 400px 10px;
-	left: 500px;
-	width: 500px;
+	background: url(side.jpeg);
+	background-repeat: repeat-y;
 }
 
 #links {
-	margin: 155px 0 20px 0 ;
+	margin: 20px 0 ;
 	width: 500px;
 	background-color: white;
 	position: relative;
@@ -43,13 +46,15 @@ li.button {
 }
 
 #info {
-	border: 5px solid green;
+	border-width: 5px;
+	border-style: double solid;
+	border-color: #002900;
+	background-color: #C1D6C1 ;
 	margin: 9% 50% 0 20 px;
 	padding: 10px 10px 10px 10px;
-	background-color: white;
 	position: relative;
-	left: 20px;
-	top: -300px;
+	left: 75px;
+	top: -280px;
 	width: 270px;
 }
 
@@ -85,16 +90,24 @@ h1.page_header {
 	background-color: white;
 }
 
-#planner_placement {
+#planner {
+	color: #003300;
+	background-color: #C1D6C1 ;
+	border-style: double solid;
+	border-width: 10px;
+	border-color: #002900;
+	padding: 10px;
 	position: relative;
-	left: 800px;
-	top: -280px;
+	left: 530px;
+	top: -380px;
+	width:250px;
 }
 
 .planner_instructions {
 	position: relative;
 	left: 200px;
 	top: 30px;
+	width: 300px;
 }
 
 #hedge_plan_header {
@@ -115,7 +128,7 @@ h1.page_header {
 .home_images {
 	position: relative;
 	top: -620px;
-	left: 380px;
+	left: 400px;
 	display:inline;
 }
 
@@ -123,3 +136,6 @@ h1.page_header {
 	position: relative;
 	top: -924px;
 	left: 650px;
+}
+
+
