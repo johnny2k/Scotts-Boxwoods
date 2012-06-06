@@ -1,15 +1,16 @@
 Plants::Application.routes.draw do
-  get "inventory/add_product"
 
-  get "inventory/remove_product"
+  get "catalog/index"
 
-  resources :orders, :hedge_planner, :hedges, :inventory
+  resources :orders, :hedge_planner, :catalog, :cart, :cart_item 
 
   get "home/index"
 
 	namespace :admin do
-		resources :inventory, :path_name => { :new => 'add_product', :destroy => 'remove_product' } 
+		resources :products
 	end
+
+	match ':controller(/:action(/:id))'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -49,13 +50,6 @@ Plants::Application.routes.draw do
   #     resources :sales do
   #       get 'recent', :on => :collection
   #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
   #   end
 
   # You can have the root of your site routed with "root"

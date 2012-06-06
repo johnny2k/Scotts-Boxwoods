@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <title>Boxwood Trees</title>
+  <title>boxwood trees</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
 	<%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<body> 
+	<div id="admin">
+		<%= link_to 'admin', admin_products_path %>
 	<div id="logo">
 		<%= image_tag("logo.png") %>
 	</div>
@@ -15,9 +16,8 @@
 <div id="links">
 	<ul id="nostyle">
 		<li class="button"><%= link_to "About Boxwoods", "/" %></li>
-		<li class="button"><%= link_to "Order some trees", new_order_path %></li>
-		<li class="button"><%= link_to "List orders", orders_path %></li>
-		<li class="button"><%= link_to "Hedge Planner", :controller => "hedge_planner" %></li>
+		<li class="button"><%= link_to "Catalog", :controller => "catalog", :action => "index" %></li>
+		<li class="button"><%= link_to "Hedge Planner", hedge_planner_index_path %></li>
 	</ul>
 </div>
 <%= yield %>
