@@ -1,7 +1,15 @@
 Plants::Application.routes.draw do
-  resources :orders, :hedge_planner, :hedges
+  get "inventory/add_product"
+
+  get "inventory/remove_product"
+
+  resources :orders, :hedge_planner, :hedges, :inventory
 
   get "home/index"
+
+	namespace :admin do
+		resources :inventory, :path_name => { :new => 'add_product', :destroy => 'remove_product' } 
+	end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

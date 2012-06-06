@@ -1,0 +1,19 @@
+<h1>Administrator's Tools</h1>
+
+<table class="admin_tools">
+	<tr>
+		<td><%= link_to 'Add product', '/admin/inventory/add_product' %></td>
+		<td><%= link_to 'Remove Product', '/admin/inventory/remove_product' %> </td>
+	</tr>
+</table>
+
+<% @products.each do |product| %>
+<table class="admin_tools">
+	<tr>
+		<td><%= product.name %></td>
+		<td><%= product.price %></td>
+	  <td><%= link_to 'Edit', product %></td>
+		<td><%= link_to 'Remove', product, :confirm => 'Really want to stop selling this?', :method => :delete %></td>
+	<tr>
+<% end %>
+</table>
