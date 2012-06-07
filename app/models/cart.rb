@@ -7,14 +7,15 @@ class Cart
 		empty!
 	end
 
-	def add_product(product)
+	def add_product(product, how_many)
 		item = @items.find {|i| i.product_id == product.id}
 		if item
-			item.quantity += 1
+			item.quantity += how_many 
 		else
-			item = CartItem.for_product(product) 
+			item = CartItem.for_product(product, how_many)
+		  @items << item
 		end
-		@total_price += product.price
+		@total_price += product.price * how_many.to_i 
 	end
 
 	def empty!

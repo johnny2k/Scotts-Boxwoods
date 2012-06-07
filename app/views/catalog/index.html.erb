@@ -9,10 +9,17 @@
 						<small>
 							<%= product.description %> <br />
 						</small>
-						<strong>$<%= sprintf("%0.2f", product.price) %> </strong><br />
-						<%= link_to 'Add to cart', :controller => 'catalog', :action => 'add_to_cart', :id => product %>
+						<strong><%= number_to_currency(product.price) %> </strong><br />
+
+						<%= form_tag :controller => "Catalog", :action => "add_to_cart", :id => product do %>
+							Quantity:<%= number_field_tag(:how_many, 1, :in => 1...10000) %><br />
+							<%= submit_tag "Add to cart", :name => nil %>
+            <% end %>							
+
 					</td>
+					<td>
 				</tr>
+				
 			<% end %>
 	</table>
 </div>

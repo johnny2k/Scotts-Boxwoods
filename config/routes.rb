@@ -3,7 +3,9 @@ Plants::Application.routes.draw do
   get "home/index"
   get "catalog/index"
   get "catalog/empty_cart" => "catalog#empty_cart"
-  get "catalog/add_to_cart" => "catalog#display_cart"
+	match "/catalog/add_to_cart/:id" => "catalog#display_cart"
+	get "catalog/add_to_cart" => "catalog#display_cart"
+  get "catalog/display_cart" => "catalog#display_cart"
 
 	resources :orders, :hedge_planner, :catalog, :cart, :cart_item 
 

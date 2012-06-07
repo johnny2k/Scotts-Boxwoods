@@ -1,8 +1,8 @@
 class Admin::ProductsController < ApplicationController
 
-	USERS = { "lifo" => "world" }
+	#USERS = { "lifo" => "world" }
 
-	before_filter :authenticate
+	#before_filter :authenticate
 
 	def index
 		@products = Product.all
