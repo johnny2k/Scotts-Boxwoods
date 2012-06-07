@@ -1,5 +1,9 @@
 class Admin::ProductsController < ApplicationController
 
+	USERS = { "lifo" => "world" }
+
+	before_filter :authenticate
+
 	def index
 		@products = Product.all
 
@@ -67,6 +71,14 @@ class Admin::ProductsController < ApplicationController
 
 	def edit
 		@product = Product.find(params[:id])
+	end
+  
+  private 
+
+	def authenticate
+		authenticate_or_request_with_http_digest do |username|
+			USERS[username]
+		end
 	end
 
 end

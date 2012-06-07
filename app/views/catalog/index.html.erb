@@ -1,17 +1,19 @@
-<table id="catalog">
-		<% @products.each do |product| %>
-			<tr>
-				<td><%= image_tag(product.image, :size => "192x256") %></td>
+<div id="catalog">
+	<table id="catalog">
+			<% @products.each do |product| %>
+				<tr>
+					<td><%= image_tag(product.image, :size => "192x256") %></td>
 
-				<td width="200">
-					<%= product.name %> <br /> 
-					<small>
-						<%= product.description %> <br />
-					</small>
-					<strong>$<%= sprintf("%0.2f", product.price) %> </strong><br />
-					<%= link_to 'Add to cart', :controller => 'catalog', :action => 'add_to_cart', :id => product %>
-				</td>
-			</tr>
-		<% end %>
-</table>
+					<td width="200">
+						<%= product.name %> <br /> 
+						<small>
+							<%= product.description %> <br />
+						</small>
+						<strong>$<%= sprintf("%0.2f", product.price) %> </strong><br />
+						<%= link_to 'Add to cart', :controller => 'catalog', :action => 'add_to_cart', :id => product %>
+					</td>
+				</tr>
+			<% end %>
+	</table>
+</div>
 

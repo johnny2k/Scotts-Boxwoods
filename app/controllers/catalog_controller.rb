@@ -13,13 +13,10 @@ class CatalogController < ApplicationController
 		@cart = find_cart
 		@cart.add_product(product)
 		redirect_to(:action => 'display_cart')
-	end
-
-	def new
-		products = Product.find(params[:id])
-		@cart = find_cart
-		@cart.add_products(product)
-		redirect_to(:action => 'disaply_cart')
+	rescue
+		logger.error("Invalid product entered #{params[:id]}")
+		flash[:notice] = 'Invalid product'
+		redirect_to(:action => 'index')
 	end
 
 	def display_cart
@@ -27,11 +24,21 @@ class CatalogController < ApplicationController
 		@items = @cart.items
 	end
 
-	def show
+	def empty_cart 
+		find_cart.empty!
+		flash[:notice] = 'The cart is now empty'
+		redirect_to(:action => 'index')
+	end
+
+	def find_cart
 		@cart = find_cart
 		@items = @cart.items
-  end
-
+		if @items.empty?
+			flash[:notice] = "The cart is empty"
+			redirect_to(:action => 'index')
+    end
+  end 
+	
 	private
 	def find_cart
 		session[:cart] ||= Cart.new

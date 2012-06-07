@@ -1,15 +1,16 @@
 Plants::Application.routes.draw do
 
-  get "catalog/index"
-
-  resources :orders, :hedge_planner, :catalog, :cart, :cart_item 
-
   get "home/index"
+  get "catalog/index"
+  get "catalog/empty_cart" => "catalog#empty_cart"
+  get "catalog/add_to_cart" => "catalog#display_cart"
+
+	resources :orders, :hedge_planner, :catalog, :cart, :cart_item 
 
 	namespace :admin do
 		resources :products
 	end
-
+  
 	match ':controller(/:action(/:id))'
 
   # The priority is based upon order of creation:

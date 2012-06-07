@@ -12,6 +12,12 @@
  *= require_tree .
 */
 
+#content {
+	border-style:solid;
+	border-width: 10px;
+	background-color: #73C74A;
+}
+
 #logo {
 	position: relative;
 	left: 300px;
@@ -19,8 +25,9 @@
 
 
 body {
-	background: url(side.jpeg);
-	background-repeat: repeat-y;
+	/* background: url(side.jpeg); 
+	background-repeat: repeat-y; */
+	background-color: green;
 }
 
 #links {

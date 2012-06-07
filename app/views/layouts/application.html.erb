@@ -6,21 +6,29 @@
 	<%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body> 
-	<div id="admin">
-		<%= link_to 'admin', admin_products_path %>
-	<div id="logo">
-		<%= image_tag("logo.png") %>
+<body>
+ <div id="content">	
+		 <div id="admin">
+				<%= link_to 'admin', admin_products_path %>
+			<div id="logo">
+				<%= image_tag("logo.png") %>
+			</div>
+
+		<div id="links">
+			<ul id="nostyle">
+				<li class="button"><%= link_to "About Boxwoods", "/" %></li>
+				<li class="button"><%= link_to "Catalog", :controller => "catalog", :action => "index" %></li>
+				<li class="button"><%= link_to "Hedge Planner", hedge_planner_index_path %></li>
+			</ul>
+
+			<% if flash[:notice] -%>
+				<div id="notice"><%= flash[:notice] %></div>
+			<% end -%>
+
+			<%= @content_for_layout %>
+		</div>
+
+		<%= yield %>
 	</div>
-
-<div id="links">
-	<ul id="nostyle">
-		<li class="button"><%= link_to "About Boxwoods", "/" %></li>
-		<li class="button"><%= link_to "Catalog", :controller => "catalog", :action => "index" %></li>
-		<li class="button"><%= link_to "Hedge Planner", hedge_planner_index_path %></li>
-	</ul>
-</div>
-<%= yield %>
-
 </body>
 </html>
