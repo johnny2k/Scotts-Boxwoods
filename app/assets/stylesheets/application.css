@@ -145,4 +145,8 @@ h1.page_header {
 	left: 650px;
 }
 
-
+#login {
+	position: absolute;
+	left: 1100px;
+	z-index: 1;
+}

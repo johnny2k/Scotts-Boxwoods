@@ -1,7 +1,7 @@
 class CatalogController < ApplicationController
   def index
 		@products = Product.all
-
+		@cart = find_cart
 		respond_to do |format|
 			format.html # index.html.erb
 			format.json { render :json => @products }
@@ -16,7 +16,7 @@ class CatalogController < ApplicationController
 		redirect_to catalog_display_cart_path
 	#rescue
 	#	logger.error("Invalid product entered #{params[:id]}")
-	#	flash[:notice] = 'Invalid product'
+	#  flash[:notice] = 'Invalid product'
 	#	redirect_to(:action => 'index')
 	end
 

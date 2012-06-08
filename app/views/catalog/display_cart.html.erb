@@ -1,7 +1,7 @@
 <h1 id="cart_header">Cart Contents</h1>
 
 <div id="cart_controls">
-	<ul>
+	<ul class="horizontal">
 		<li><%= link_to 'Go back to the catalog', :action=> 'index' %></li>
 		<li><%= link_to 'Empty cart', :controller => 'catalog', :action => 'empty_cart' %></li>
 		<li><%= link_to 'Checkout', :controller => 'catalog', :action => 'checkout' %></li>

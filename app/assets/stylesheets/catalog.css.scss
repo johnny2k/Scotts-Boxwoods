@@ -14,10 +14,26 @@
  
 #cart_header {
 	position: relative;
-	left: 50px;
+	left: 450px;
+}
+
+#catalog_container {
+	position: absolute;
 }
 
 #catalog {
 	position: relative;
 	left: 100px;
+}
+
+#cart_indicator {
+	z-index: 1;
+	position: absolute;
+	top: -200px;
+	left: -5px;dex: 1;
+}
+
+ul.horizontal {
+	display: inline;
+	list-style: none;
 }

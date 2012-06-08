@@ -3,13 +3,14 @@
 <head>
   <title>boxwood trees</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-	<%= javascript_include_tag "application" %>
+	<%= javascript_include_tag "application", :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
- <div id="content">	
-		 <div id="admin">
-				<%= link_to 'admin', admin_products_path %>
+		 <div id="login">
+				<%= link_to 'login', admin_products_path %>
+		 </div>
+
 			<div id="logo">
 				<%= image_tag("logo.png") %>
 			</div>
@@ -19,6 +20,7 @@
 				<li class="button"><%= link_to "About Boxwoods", "/" %></li>
 				<li class="button"><%= link_to "Catalog", :controller => "catalog", :action => "index" %></li>
 				<li class="button"><%= link_to "Hedge Planner", hedge_planner_index_path %></li>
+				<li class="button"><%= link_to "Shopping Cart", catalog_display_cart_path %></li> 
 			</ul>
 
 			<% if flash[:notice] -%>
