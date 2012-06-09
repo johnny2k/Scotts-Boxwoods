@@ -1,27 +1,24 @@
 <!-- Get this into the application controller so it's available on all views -->
-<div id="catalog_container">
-	<div id="cart_indicator">
-	</div>
-
-
-	<div id="catalog">
-		<table id="catalog">
-				<% @products.each do |product| %>
-					<tr>
-						<td><%= image_tag(product.image, :size => "192x256") %></td>
-						<td width="200">
-							<%= product.name %> <br /> 
-							<small><%= product.description %> <br /></small>
-							<strong><%= number_to_currency(product.price) %> </strong><br />
-							
-							<%= form_for :cart, :remote => true, :url => { :controller => "Catalog", :action => "add_to_cart", :id => product.id } do %>
-								Quantity:<%= number_field_tag(:how_many, 1, :in => 1...10000) %><br />
-								<%= submit_tag "Add to cart", :disable_with => 'Please wait...', :name => nil, :id => "butt" %>
-							<% end %>
-							
-						</td>
-					</tr>
-				<% end %>
-		</table>
-	</div>
+<div id="catalog">
+	<table id="catalog">
+			<% @products.each do |product| %>
+				<tr>
+					<td><%= if product.image.length > 1 
+										then image_tag(product.image, :size => "192x256")
+									end %>
+					</td>
+					<td width="200">
+						<%= product.name %> <br /> 
+						<small><%= product.description %> <br /></small>
+						<strong><%= number_to_currency(product.price) %> </strong><br />
+						
+						<%= form_for :cart, :url => { :controller => "Catalog", :action => "add_to_cart", :id => product.id } do %>
+							Quantity:<%= number_field_tag(:how_many, 1, :in => 1...10000) %><br />
+							<%= submit_tag "Add to cart", :disable_with => 'Please wait...', :name => nil, :id => "butt" %>
+						<% end %>
+						
+					</td>
+				</tr>
+			<% end %>
+	</table>
 </div>

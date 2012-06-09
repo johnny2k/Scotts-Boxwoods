@@ -1,3 +1,35 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#info {
+	position: relative;
+	left: 60px;
+	text-align: center;
+	color: white;
+	background-color: #30192B;
+	border-stlye: solid;
+	border-color: pink;
+	border-width: 3px;
+	padding: 5px;
+	border-radius: 15px;
+}
+
+#home_picture {
+	position: relative;
+	top: -400px;
+	left: 350px;
+	border-style: solid;
+	border-color: #30192B;
+	border-width: 5px;
+	border-radius: 5px;
+	width: 402px;
+	height: 300px;
+}
+
+#about_this_site {
+	position: relative;
+	top: -300px;
+	left: 250px;	
+	width: 650px;
+}

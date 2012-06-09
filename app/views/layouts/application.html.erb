@@ -3,32 +3,35 @@
 <head>
   <title>boxwood trees</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-	<%= javascript_include_tag "application", :defaults %>
+	<%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-		 <div id="login">
-				<%= link_to 'login', admin_products_path %>
-		 </div>
-
-			<div id="logo">
-				<%= image_tag("logo.png") %>
-			</div>
-
+		<div id="cart_indicator">	
+			<%= if @cart then render :partial => "catalog/cart_indicator" end %>
+		</div>
+		
+		<div id="login">
+			<%= link_to 'login', admin_products_path %>
+		</div>
+		
+		<div id="logo">
+			<%= image_tag("logo.png") %>
+		</div>	
 		<div id="links">
-			<ul id="nostyle">
+			<ul id="link_list">
 				<li class="button"><%= link_to "About Boxwoods", "/" %></li>
+				<li class="button"><%= link_to "Forum", "http://www.reddit.com/r/horticulture" %></li>
 				<li class="button"><%= link_to "Catalog", :controller => "catalog", :action => "index" %></li>
 				<li class="button"><%= link_to "Hedge Planner", hedge_planner_index_path %></li>
-				<li class="button"><%= link_to "Shopping Cart", catalog_display_cart_path %></li> 
 			</ul>
-
+		</div>
+		<div id="content">
 			<% if flash[:notice] -%>
 				<div id="notice"><%= flash[:notice] %></div>
 			<% end -%>
 
 			<%= @content_for_layout %>
-		</div>
 
 		<%= yield %>
 	</div>

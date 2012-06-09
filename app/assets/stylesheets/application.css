@@ -13,140 +13,74 @@
 */
 
 #content {
-	border-style:solid;
-	border-width: 10px;
-	background-color: #73C74A;
+	background-color: Gainsboro;
+  position: relative;
+	top: 30px;
+	border-style: solid;
+  border-left-width: 5px;
+	border-right-width: 5px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-color: #584058;
+	padding: 20px;
+	margin: 0 0 150px 0;
 }
 
 #logo {
 	position: relative;
-	left: 300px;
+	left: 150px;
 }
 
 
 body {
-	/* background: url(side.jpeg); 
-	background-repeat: repeat-y; */
-	background-color: green;
+	background-color: Gainsboro;
+	width: 1000px; 
+	padding: 0 200px;
 }
 
+
 #links {
-	margin: 20px 0 ;
-	width: 500px;
+	width: 850px;
 	background-color: white;
 	position: relative;
-	left: 470px;
-	
+	top: 40px;
+	left: 130px;
+	z-index: 0;	
+}
+
+#link_list {
+	list-style: none;
+	list-style-position: inside;
 }
 
 li.button {
-	border-style: double solid double solid;
+	font-size: 20px;
+	padding: 5px;
+	font: black;
+	font-weight: 900;
+	background-color: #B0B0B0;
+	border-style: solid solid none;
+	border-width: 3px;
+	border-top-left-radius: 9px;
+	border-top-right-radius: 9px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius:0;
 	display: inline;
-}
-
-
-#nostyle {
-	list-style: none;
-	display: inline;
-	list-style-position: inside;
-	width: 400px;
-}
-
-#info {
-	border-width: 5px;
-	border-style: double solid;
-	border-color: #002900;
-	background-color: #C1D6C1 ;
-	margin: 9% 50% 0 20 px;
-	padding: 10px 10px 10px 10px;
-	position: relative;
-	left: 75px;
-	top: -280px;
-	width: 270px;
-}
-
-table.requests {
-	background-color: white;
-	border-style: solid;
- 	border-width: medium;	
-	border-color: black;
-	position: relative;
-	left: 20px;
-	top: 10px;
 }
 
 h1.page_header {
-	margin: 10% 0 0 0;
 	color: black;
+	z-index: 5;
 }
 
-.hedge_results {
-	border-style:solid;
-	border-color: black;
-	border-width: 5px;
-}
-
-#show_order {
-	background-color: white;
-	margin: 90px 20px 0 0;
-}
-
-.hedge_planner {
-	margin: 10px;
-	width: 200px;
-	background-color: white;
-}
-
-#planner {
-	color: #003300;
-	background-color: #C1D6C1 ;
-	border-style: double solid;
-	border-width: 10px;
-	border-color: #002900;
-	padding: 10px;
-	position: relative;
-	left: 530px;
-	top: -380px;
-	width:250px;
-}
-
-.planner_instructions {
-	position: relative;
-	left: 200px;
-	top: 30px;
-	width: 300px;
-}
-
-#hedge_plan_header {
-	position: relative;
-	left: 540px;
-	top: 30px;
-}
-
-.home_hedge_planner {
-	border-style: solid;
-	border-color: black;
-	position: relative;
-	left: 1100px;
-	top: -25px;
-	width: 210px;
-}
-
-.home_images {
-	position: relative;
-	top: -620px;
-	left: 400px;
-	display:inline;
-}
-
-.other_picture {
-	position: relative;
-	top: -924px;
-	left: 650px;
-}
 
 #login {
 	position: absolute;
-	left: 1100px;
+	left: 1300px;
 	z-index: 1;
+}
+
+#info {
+	width: 200px;
+	padding: 0 20px;
 }

@@ -1,27 +1,33 @@
 <h1 id="cart_header">Cart Contents</h1>
 
 <div id="cart_controls">
-	<ul class="horizontal">
-		<li><%= link_to 'Go back to the catalog', :action=> 'index' %></li>
-		<li><%= link_to 'Empty cart', :controller => 'catalog', :action => 'empty_cart' %></li>
-		<li><%= link_to 'Checkout', :controller => 'catalog', :action => 'checkout' %></li>
+	<ul>
+		<li class = "horizontal"><%= link_to 'Go back to the catalog', :action=> 'index' %></li>
+		<li class = "horizontal"><%= link_to 'Empty cart', :controller => 'catalog', :action => 'empty_cart' %></li>
+		<li class = "horizontal"><%= link_to 'Checkout', :controller => 'catalog', :action => 'checkout' %></li>
 	</ul>
 </div>
 
-<table id="cart">
+<table id="cart", border="1">
+	<tr>
+		<th>Quantity</td>
+		<th>Product</td>
+		<th>Unit Price</td>
+		<th>Total</td>
+	</tr>
 <% for item in @items
 	product = item.product 
 -%>
-	<tr>
-		<td><%= item.quantity %></td>
-		<td><%= h(product.name) %></td>
-		<td><%= number_to_currency(item.price) %></td>
-		<td><%= number_to_currency(item.price * item.quantity) %></td>
+	<tr id = "list">
+		<td class = "data"><%= item.quantity %></td>
+		<td class = "data"><%= h(product.name) %></td>
+		<td class = "data"><%= number_to_currency(item.price) %></td>
+		<td class = "data"><%= number_to_currency(item.price * item.quantity) %></td>
 <% end -%>
 	</tr>
 
 	<tr>
-		<td><strong>Total:</strong></td>
+		<td colspan = "3"><strong>Total:</strong></td>
 		<td><%= number_to_currency(@cart.total_price) %></td>
 </table>
 

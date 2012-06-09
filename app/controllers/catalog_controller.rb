@@ -13,7 +13,10 @@ class CatalogController < ApplicationController
 		how_many = params[:how_many]
 		@cart = find_cart
 		@cart.add_product(product, how_many)
-		redirect_to catalog_display_cart_path
+		redirect_to :action => "index"
+		#catalog_display_cart_path
+	
+	#       Add this back in later when I don't need to see the errors
 	#rescue
 	#	logger.error("Invalid product entered #{params[:id]}")
 	#  flash[:notice] = 'Invalid product'
