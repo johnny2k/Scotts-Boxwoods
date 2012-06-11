@@ -36,7 +36,12 @@ class CatalogController < ApplicationController
 			flash[:notice] = "The cart is empty"
 			redirect_to(:action => 'index')
     end
-  end 
+  end
+
+	def checkout
+		@order = Order.new(:params)
+		
+	end		
 	
 	private
 	def find_cart
