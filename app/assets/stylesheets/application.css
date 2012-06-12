@@ -17,14 +17,12 @@
   position: relative;
 	top: 30px;
 	border-style: solid;
-  border-left-width: 5px;
-	border-right-width: 5px;
-	border-top-width: 1px;
-	border-bottom-width: 1px;
+	border-width: 1px;
 	border-color: #584058;
 	padding: 20px;
 	margin: 0 0 150px 0;
 }
+
 
 #logo {
 	position: relative;
@@ -54,13 +52,14 @@ body {
 }
 
 li.button {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 20px;
 	padding: 5px;
 	font: black;
 	font-weight: 900;
 	background-color: #B0B0B0;
 	border-style: solid solid none;
-	border-width: 3px;
+	border-width: 1px;
 	border-top-left-radius: 9px;
 	border-top-right-radius: 9px;
 	border-bottom-left-radius: 0;

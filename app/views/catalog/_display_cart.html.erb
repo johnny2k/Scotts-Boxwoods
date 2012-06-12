@@ -1,0 +1,33 @@
+<div id="cart">
+	<h1 id="cart_header">Cart</h1>
+
+	<table id="cart_table", border="1">
+		<tr class="pretty_row">
+			<th>Quantity</td>
+			<th>Product</td>
+			<th>Unit Price</td>
+			<th>Total</td>
+		</tr>
+	<% for item in @cart.items
+		product = item.product 
+	%>
+		<tr id = "list">
+			<td class = "data"><b><%= item.quantity %></b></td>
+			<td class = "data"><b><%= link_to h(product.name), "index/#" + product.id.to_s  %></b></td>
+			<td class = "data"><b><%= number_to_currency(item.price) %></b></td>
+			<td class = "data"><b><%= number_to_currency(item.price * item.quantity) %></b></td>
+	<% end %>
+		</tr>
+
+		<tr class="pretty_row">
+			<td colspan = "3"><strong>Total:</strong></td>
+			<td><b><%= number_to_currency(@cart.total_price) %></b></td>
+	</table>
+
+	<div id="cart_controls">
+		<ul>
+			<li class = "horizontal"><%= link_to 'Checkout', :action => 'checkout' %></li>
+			<li class = "horizontal"><%= link_to 'Empty cart', :action => 'empty_cart' %></li>
+		</ul>
+	</div>
+</div>

@@ -1,4 +1,4 @@
-<%= form_for(@order) do |f| %>
+<%= form_for @order, :url { :action => "create_order" } do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -27,16 +27,9 @@
       <%= f.label :address %><br />
 			<%= f.text_field :address %>
     </div>
-		<div class="field">
-      <%= f.label "How many one gallon pots?" %><br />
-			<%= f.text_field :one_gal_quant %>
     </div>
 		<div class="field">
-      <%= f.label "How many five gallon pots?" %><br />
-			<%= f.text_field :five_gal_quant %>
-    </div>
-		<div class="field">
-      <%= f.label "Add irrigation supplies?" %><br />
+      <%= f.label "Need irrigation services?" %><br />
 			<%= f.check_box :irrigation %>
     </div>
 

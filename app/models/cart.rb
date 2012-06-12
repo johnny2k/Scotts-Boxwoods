@@ -1,8 +1,6 @@
 class Cart
 		
-	attr_reader :items
-	attr_reader :total_price
-	attr_reader :quantity
+	attr_reader :items, :total_price, :quantity
 
 	def initialize
 		empty!

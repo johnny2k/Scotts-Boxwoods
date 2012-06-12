@@ -2,29 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#cart {
+	padding: 25px;
+	position: relative;
+	float: right;
+}
+
 #cart_controls {
 	text-align: center;
 	position: relative;
-	left: 40px;
 }
 
-#cart {
+tr.pretty_row {
+	color: DarkSlateBlue;
+	background-color: Lavender;
+}
+
+#cart_table {
 	background-color: #D8D8D8;
-	position: relative;
-	left: 340px;
 	border-style: solid;
 	border-width: 2px;
 }
  
 #cart_header {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	position: relative;
-	left: 450px;
+	text-align: center;
 }
 
 
 #catalog {
 	position: relative;
 	left: 20px;
+	width: 400px;
+	z-index: 1;
 }
 
 #cart_indicator {
@@ -41,9 +52,14 @@ li.horizontal {
 }
 
 td.data {
-	padding: 0 10px;
+	text-align: right;
 }
 
 #list {
-	text-align: right;
+	color: DarkSlateGrey;
+	background-color: white;
 }
+
+#order_form {
+	
+} 

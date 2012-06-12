@@ -1,18 +1,34 @@
 <div class="hedgeplan">
-	<%= form_tag("/hedge_planner", :method => "get", :remote => "true") do %>
+	<%= form_tag("/hedge_planner/plan_hedge") do %>
     <%= label_tag(:pot_size, "Select a pot size") %>	
-    <%= select_tag(:pot_size, options_for_select([['1-Gallon', 1], ['5-gallon', 2]], 2)) %><br />
+		<%= select_tag(:pot_size, options_for_select([['1-Gallon', 1], ['5-gallon', 2]], 2)) %>
+		<%= label_tag(:irrigation, "Include irrigation supplies?") %>
+		<%= check_box_tag(:irrigation) %><br /><br />
    	  
-		<%= label_tag(:length, "Hedge length:") %><br />
+		<%= label_tag(:length, "Hedge length:") %>
 		<%= text_field_tag(:length) %><br />
+		<%= radio_button_tag(:length_units, "feet") %>
+		<%= label_tag(:feet, "Feet") %>
+		<%= radio_button_tag(:length_units, "yards") %>
+		<%= label_tag(:yards, "Yards") %> 
+		<%= radio_button_tag(:length_units, "miles") %>
+		<%= label_tag(:yards, "Miles") %><br /><br /> 
+
 	
-    <%= label_tag(:distance, "Gap between shrubs:") %><br />
-    <%= text_field_tag(:distance) %><br />
+    <%= label_tag(:distance, "Gap between shrubs:") %>
+		<%= text_field_tag(:distance) %><br />
+		<%= radio_button_tag(:distance_units, "feet") %>
+		<%= label_tag(:feet, "Feet") %>
+		<%= radio_button_tag(:distance_units, "yards") %>
+		<%= label_tag(:yards, "Yards") %> 
+		<%= radio_button_tag(:distance_units, "miles") %>
+		<%= label_tag(:yards, "Miles") %><br /><br /> 
     
-    <%= label_tag(:years, "Years willing to wait:") %><br />
+    <%= label_tag(:years, "Years willing to wait:") %>
     <%= text_field_tag(:years) %><br />
 		
 		<%= button_tag 'Submit' %>
+		<%= button_tag 'Create Order' %>
 
 	<% end %>
 

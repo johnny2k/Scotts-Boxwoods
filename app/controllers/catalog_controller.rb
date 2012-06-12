@@ -2,6 +2,7 @@ class CatalogController < ApplicationController
   def index
 		@products = Product.all
 		@cart = find_cart
+		@items = @cart.items
 		respond_to do |format|
 			format.html # index.html.erb
 			format.json { render :json => @products }
@@ -13,6 +14,7 @@ class CatalogController < ApplicationController
 		how_many = params[:how_many]
 		@cart = find_cart
 		@cart.add_product(product, how_many)
+		@items = @cart.items
 		redirect_to :action => "index"
 		#catalog_display_cart_path
 	
@@ -39,13 +41,29 @@ class CatalogController < ApplicationController
   end
 
 	def checkout
-		@order = Order.new(:params)
-		
+		@order = Order.new
+		@cart = find_cart
+		@items = @cart.items
+		if @items.empty?
+			flash[:notice] = "There's nothing in your cart!"
+		end
 	end		
 	
-	private
 	def find_cart
 		session[:cart] ||= Cart.new
 	end
 
+	def create_order
+		@cart = find_cart
+		@order = Order.new(params[:order])
+		@order.cart_items << @cart.items
+		if @order.save
+			@cart.empty!
+		flash[:notice] = 'Thank you for your order.'
+		@order = nil
+		redirect_to catalog_index_path
+		else
+			render(:action => 'checkout')
+		end
+	end
 end

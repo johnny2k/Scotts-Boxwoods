@@ -1,4 +1,4 @@
-<!-- Get this into the application controller so it's available on all views -->
+<%= render :partial => "display_cart" %>
 <div id="catalog">
 	<table id="catalog">
 			<% @products.each do |product| %>
@@ -6,7 +6,7 @@
 					<td><%= if product.image.length > 1 
 										then image_tag(product.image, :size => "192x256")
 									end %>
-					</td>
+									</td><a name="<%= product.id %>">
 					<td width="200">
 						<%= product.name %> <br /> 
 						<small><%= product.description %> <br /></small>
@@ -14,7 +14,8 @@
 						
 						<%= form_for :cart, :url => { :controller => "Catalog", :action => "add_to_cart", :id => product.id } do %>
 							Quantity:<%= number_field_tag(:how_many, 1, :in => 1...10000) %><br />
-							<%= submit_tag "Add to cart", :disable_with => 'Please wait...', :name => nil, :id => "butt" %>
+							<%= submit_tag "Add to cart", :disable_with => 'Please wait...', :name => nil, :id => "butt" %><br />
+							<small><%= link_to "Show cart", :action => :display_cart %></small>
 						<% end %>
 						
 					</td>
@@ -22,3 +23,5 @@
 			<% end %>
 	</table>
 </div>
+
+

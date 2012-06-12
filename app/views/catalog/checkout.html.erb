@@ -1,0 +1,40 @@
+<%= render :partial => "display_cart" %>
+
+<div id="order_form">
+	<%= form_tag(:controller => "catalog", :action => "create_order") do %>
+		<% if @order.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+				<ul>
+				<% @order.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+			<div class="field">
+				<%= label_tag :name %><br />
+				<%= text_field(:order, :name, :placeholder => "Your name" ) %>
+			</div>
+			<div class="field">
+				<%= label_tag :phone %><br />
+				<%= telephone_field(:order, :phone, :placeholder => "nnn-nnn-nnnn" ) %>
+			</div>
+			<div class="field">
+				<%= label_tag :email %><br />
+				<%= email_field(:order, :email, :placeholder => "youremail@address.com") %>
+				</div>
+			<div class="field">
+				<%= label_tag :address %><br />
+				<%= text_field(:order, :address, :placeholder => "If we're delivering we need an address.") %>
+			</div>
+			<div class="field">
+				<%= label_tag "Need irrigation services?" %><br />
+				<%= check_box(:order, :irrigation) %>
+			</div>
+
+			<%= submit_tag "Submit order" %>
+		<% end %>
+</div>
