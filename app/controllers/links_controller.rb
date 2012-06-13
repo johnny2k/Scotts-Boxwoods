@@ -1,19 +1,34 @@
 class LinksController < ApplicationController
 	def index 
-		@links = Links.all
+		@links = Link.all
 		respond_to do |format|
 			format.html # index.html.erb
       format.json { render :json => @links }
+		end
 	end
 
 	def new 
 		@link = Link.new
+		@categories = Category.all.map { |category| [category.name, category.id] }
 		respond_to do |format|
-			format.html # add_link.html.erb
+			format.html # new.html.erb
 			format.json { render :json => @order }
 		end
 	end
 
+	def create
+	  @link = Link.create( :url => params[:url], :link_text => params[:link_text], :category_id => params[:category_id])
+		respond_to do |format|
+			if @link.save
+				format.html { redirect_to :action => "index", :notice => 'The link has been saved.' }
+				format.json { render :json => @link.errors, :status => :unprocessable_entity }
+			else
+				format.html { render :action => "new" }
+				format.json { render :json => @link.errors, :status => :unprocessable_entity }
+			end
+		end
+	end
+	
 	def update
 		@link = Link.find(params[:id])
 
@@ -30,7 +45,7 @@ class LinksController < ApplicationController
 		@link.destroy
 
 		respond_to do |format|
-			format.html { redirect_to home_index_path }
+			format.html { redirect_to links_path}
 			format.json { head :no_content }
 		end
 	end
@@ -38,16 +53,7 @@ class LinksController < ApplicationController
 
 	def edit
 		@link = Link.find(params[:id])
-
-		respond_to do |format|
-			if @link.save
-				format.html { redirect_to @order, :notice => 'The link has been added to the list.' }
-				format.json { render :json => @link, :status => :created, :location => @link }
-			else
-				format.html { render :action => "new" }
-				format.json { render :json => @link.errors, :status => :unprocessable_entity }
-			end
-		end
 	end
 
+end
 	

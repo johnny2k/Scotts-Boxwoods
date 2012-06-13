@@ -1,12 +1,13 @@
 class CatalogController < ApplicationController
-  def index
+
+	def index
 		@products = Product.all
 		@cart = find_cart
 		@items = @cart.items
 		respond_to do |format|
 			format.html # index.html.erb
 			format.json { render :json => @products }
-	   end
+		end
 	end
 
 	def add_to_cart

@@ -1,15 +1,25 @@
 Plants::Application.routes.draw do
+  get "category/new"
+
+  get "category/edit"
+
+  get "category/remove"
+
+	get "category/create"
+
   #get "order/create_order" => "orders#create_order"
   get "home/index"
+	get "admin/index" => "admin#index"
   get "catalog/index"
   get "catalog/empty_cart" => "catalog#empty_cart"
 	match "/catalog/add_to_cart/:id" => "catalog#display_cart"
   get "catalog/display_cart" => "catalog#display_cart"
 	get "catalog/checkout" => "catalog#checkout"
-	resources :orders, :hedge_planner, :catalog, :cart, :cart_item 
+	resources :orders, :hedge_planner, :catalog, :cart, :cart_item, :links, :categories
 
 	namespace :admin do
 		resources :products
+		resources :categories
 	end
   
 	match ':controller(/:action(/:id))'

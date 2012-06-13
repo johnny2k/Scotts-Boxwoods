@@ -1,0 +1,13 @@
+<%= form_tag(:controller => "links", :action => "create") do  %>
+
+	<%= label_tag(:link_text, "The text to display") %>
+	<%= text_field_tag(:link_text) %><br />
+	
+	<%= label_tag(:url, "The link") %>
+	<%= text_field_tag(:url) %><br />
+
+	<%= label_tag(:category_id, "Pick a category") %>
+	<%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :name)) %><br />
+
+	<%= submit_tag("Add the link") %>
+<% end %>

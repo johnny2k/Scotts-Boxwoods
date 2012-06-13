@@ -1,0 +1,17 @@
+<%= stylesheet_link_tag "home" %>
+<h1 id="admin_header"> Administration Tools</h1>
+<div id="admin_tools">
+	<table>
+		<tr>
+			<td class="tool_links"><%= link_to 'Products', admin_products_path, :style => 'color: white', :class => 'admin' %></td> 
+			<td class="tool_links"><%= link_to 'Orders', orders_path,  :style => 'color: white',:class => 'admin' %></td>
+			<td class="tool_links"><%= link_to 'Links', links_path,  :style => 'color: white',:class => 'admin'  %></td> 
+			<td class="tool_links"><%= link_to 'Categories', categories_path, :style => 'color: white', :class => 'admin' %></td>
+		</tr>
+	</table>
+</div>
+
+<div id="admin_info">
+	<h1>"What can I change?"</h1>
+	<p>These links will allow you to add or remove products, links and their categories, and to check what orders have come in. </p>
+</div>	

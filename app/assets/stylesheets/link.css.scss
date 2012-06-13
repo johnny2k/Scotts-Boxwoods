@@ -1,0 +1,39 @@
+#side_bar_links {
+	width: 200px;
+	background-color: gainsboro;
+	position: relative;
+	float: left;
+	top: 400px;
+	left: -190px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #584058;
+	padding: 20px;
+}
+
+table.link_table {
+	background-color: #30192B;
+	position: relative;
+	left: -12px;
+	margin: 10px;
+	text-align: center;
+	padding: 5px;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	width: 200px;
+}
+
+td.link_table_data {
+	padding: 4px;
+}
+
+th.white {
+	background-color: white;
+	font: white;
+}
+
+a.styled {
+	font: black;
+} 

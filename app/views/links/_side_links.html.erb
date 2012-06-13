@@ -1,0 +1,15 @@
+<% @categories.each do |category| %>
+	<table class="link_table">
+		<tr>
+			<th class="white"><%= category[0] %><td>
+		</tr>
+		<% @links.each do |link| %>
+			<% if link.category_id == category[1] then %>
+				<tr>
+					<td class="link_table_data"><%= link_to link.link_text, link.url, { :style => 'color: white', :class => 'styled' } %></td>
+				</tr>
+			<% end %>
+		<% end %>
+	<% end %>
+</table>
+	

@@ -1,0 +1,9 @@
+<table class="link_table">
+	<% @links.each do |link| %>
+		<tr>
+			<td class="link_table_data"><%= link_to link.link_text, link.url,{ :style => 'color: white', :class => 'styled' } %></td>
+			<td class="link_table_data"><%= link_to 'Edit', edit_link_path(link), { :style => 'color: white', :class => 'styled' } %></td>
+			<td class="link_table_data"><%= link_to 'Destroy', link, :confirm => 'Are you sure you you want to destroy this link?', :method => :delete, :style => 'color: white', :class => 'styled' %></td>
+		</tr>
+	<% end %>
+</table>
