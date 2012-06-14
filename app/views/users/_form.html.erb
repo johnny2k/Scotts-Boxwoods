@@ -1,0 +1,14 @@
+<% form_for @user do |f| %>
+	<table id="edit_user_table">
+		<tr>
+			<td><%= @user.email %></td>
+		</tr>
+		<tr>
+			<td><%= select_tag(:user_type, options_for_select([['Regular', 1], ['Admin', 2]])) %></td>
+		</tr>
+		<tr>
+			<td><%= f.submit %></td>
+		</tr>
+<% end %>
+	</table>
+			
