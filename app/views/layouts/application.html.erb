@@ -5,44 +5,63 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
 	<%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-	</head>
-	
+</head>
 
 <body>	
-	
-	<div id="side_bar_links">
-		<%= render 'links/side_links' %>
-  </div>
+	<% if flash[:notice] %>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end -%>
+
+<div id="left_side"</div>	
+	<div id="user_nav">
+		<% if current_user %>
+			[Logged in as <%= current_user.email %>]<br />
+			<%= link_to "Log out", :controller => 'sessions', :action => 'destroy', :method => 'get' %>
+		<% else %>
+			<%= render :partial => 'sessions/new' %>
+		<% end %>
+	</div>
 	
 	<div id="cart_indicator">	
 		<%= render :partial => "catalog/cart_indicator" %>
 	</div>
 	
-	<div id="login">
-		<%= link_to 'login',admin_index_path  %>
-	</div>
+
 	
-	<div id="logo">
-		<%= image_tag("logo.png") %>
+	<% if current_user %>
+	<div id="admin_links">
+		<table class="cool_table">
+			<th class="white"><b>Admin</b></th>
+			<tr><td><%= link_to 'Products', admin_products_path, :style => 'color: white' %></tr></td>
+			<tr><td><%= link_to 'Orders', orders_path,  :style => 'color: white' %></tr></td>
+			<tr><td><%= link_to 'Links', links_path,  :style => 'color: white' %></tr></td>
+			<tr><td><%= link_to 'Categories', categories_path, :style => 'color: white' %></tr></td>
+			<tr><td><%= link_to 'Users', users_path, :style => 'color: white' %></tr></td>
+		</table>
+	</div>
+  <% end %>
+
+	<div id="side_bar_links">
+		<%= render 'links/side_links' %>
 	</div>	
-	
-	<div id="links">
-		<ul id="link_list">
-			<li class="button"><%= link_to "About Boxwoods", "/" %></li>
-			<li class="button"><%= link_to "Forum", "http://www.reddit.com/r/horticulture" %></li>
-			<li class="button"><%= link_to "Catalog", :controller => "catalog", :action => "index" %></li>
-			<li class="button"><%= link_to "Hedge Planner", hedge_planner_index_path %></li>
-		</ul>
 	</div>
 
-
+	<div id="right_side">	
+	<div id="logo">
+		<%= image_tag("minibuxus.png") %>
+	</div>	
 	<div id="content">
-		<% if flash[:notice] %>
-			<div id="notice"><%= flash[:notice] %></div>
-		<% end -%>
-
+		<div id="links">
+			<ul id="link_list">
+				<li class="button"><%= link_to "About Boxwoods", "/", { :style => 'color: white', :class => 'white' }%></li>
+				<li class="button"><%= link_to "Forum", "http://www.reddit.com/r/horticulture", { :style => 'color: white', :class => 'styled' }%></li>
+				<li class="button"><%= link_to "Catalog", catalog_index_path, { :style => 'color: white', :class => 'white' }%></li>
+				<li class="button"><%= link_to "Hedge Planner", hedge_planner_index_path, { :style => 'color: white', :class => 'white' }%></li>
+			</ul>
+		</div>		
 		<%= @content_for_layout %>
-		<%= yield %>
+			<%= yield %>
+		</div>
 	</div>
 </body>
 </html>

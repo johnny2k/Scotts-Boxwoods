@@ -1,7 +1,7 @@
 class CatalogController < ApplicationController
-
+  skip_before_filter :require_login
 	def index
-		@products = Product.all
+		@products = Product.order("category DESC")
 		@cart = find_cart
 		@items = @cart.items
 		respond_to do |format|

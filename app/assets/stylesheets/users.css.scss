@@ -1,0 +1,21 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#sign_up_form {
+ position: relative;
+ left: 50px;
+ background-color: #003300;
+ color: white;
+ padding: 20px;
+ margin:2% 60% 1% 10%;
+ border-style: solid;
+ border-width: 5px;
+ border-radius: 3px;
+ border-color: black;
+}
+
+#user_tools {
+	color: white;
+	padding: 10px;
+}

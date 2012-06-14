@@ -1,6 +1,7 @@
-<h1> class ="page_header">Editing product.</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @order %> | 
+<h1 class="page_header">Editing product</h1>
 <%= link_to 'Back', admin_products_path %>
+
+<div id="product_edit_form">
+	<%= render :partial => 'form' %>
+</div>
+

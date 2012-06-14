@@ -1,4 +1,8 @@
 Plants::Application.routes.draw do
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "sign_up" => "users#new", :as => "sign_up"
+
   get "category/new"
 
   get "category/edit"
@@ -15,7 +19,7 @@ Plants::Application.routes.draw do
 	match "/catalog/add_to_cart/:id" => "catalog#display_cart"
   get "catalog/display_cart" => "catalog#display_cart"
 	get "catalog/checkout" => "catalog#checkout"
-	resources :orders, :hedge_planner, :catalog, :cart, :cart_item, :links, :categories
+	resources :orders, :hedge_planner, :catalog, :cart, :cart_item, :links, :categories, :users, :sessions
 
 	namespace :admin do
 		resources :products

@@ -5,7 +5,7 @@ body {
   font-size: 13px;
   line-height: 18px; }
 
-p, ol, ul, td {
+p, ol,td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px; }
@@ -29,17 +29,20 @@ a {
 	}
 
 div {
-  &.field, &.actions {
+   &.actions {
     margin: 10px; 
     background-color: white; 
     width: 220px;} }
     
 
 #notice {
+	float: left;
+	z-index: 10;
 	position: relative;
-	top: -80px;
+	left: 50px;
+	top: 30px;
 	text-align: center;
-	width: auto;
+	width: 70px;;
 	border-style: solid;
 	border-width: 3px;
 	background-color: white;

@@ -1,4 +1,4 @@
-.admin_tools {
+.products_list {
 	position: relative;
 	left: 55px;
 	boder-style: solid;
@@ -20,10 +20,20 @@
 }
 
 .product_line0 {
-	background:#FFE4B5;
+	background: #B1E1C6;
 }
 
 .product_line1 {
 	background:#F5FFFA;
 }
 
+div.field {
+	padding: 15px;
+	width: 350px;
+	background-color: #003300;
+}
+
+#product_edit_form {
+	position: relative;
+	margin: 30px;
+}

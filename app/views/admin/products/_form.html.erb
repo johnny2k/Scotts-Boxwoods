@@ -11,33 +11,38 @@
 		</div>
 	<% end %>
 
-	<div class="field">
+	<div>
 		<%= f.label :name %><br />
 		<%= f.text_field :name %>
 	</div>
 
-	<div class="field">
+	<div>
 		<%= f.label :description %><br />
 		<%= f.text_area :description %>
 	</div>
 
-	<div class="field">
+	<div>
 	 <%= f.label :image %><br />
 	 <%= f.text_field :image %>
 	</div>
 
-	<div class="field">
+	<div>
 	 <%= f.label :price %><br />
 	 <%= f.text_field :price %>
 	</div>
 
-	<div class="field">
+	<div>
 		<%= f.label :stock %><br />
 		<%= f.text_field :stock %>
 	</div>
 
-	<div class="actions">
-		<%= f.submit %>
+	<div>
+		<%= f.label :category %></br>
+		<%= f.text_field :category %></br>
+	</div>
+
+	<div>
+		<%= f.submit "Save changes", :style => 'color:white', :class => 'cool_button' %>
 	</div>
 
 <% end %>

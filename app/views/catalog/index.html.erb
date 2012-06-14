@@ -1,20 +1,20 @@
 <%= render :partial => "display_cart" %>
 <div id="catalog">
-	<table id="catalog">
+	<table id="catalog_table">
 			<% @products.each do |product| %>
 				<tr>
-					<td><%= if product.image.length > 1 
-										then image_tag(product.image, :size => "192x256")
-									end %>
-									</td><a name="<%= product.id %>">
-					<td width="200">
-						<%= product.name %> <br /> 
+					<td>
+						<%= if product.image.length > 1 
+									then image_tag(product.image, :size => "192x256")
+								end %>
+					</td><a name="<%= product.id %>">
+					<td><b><%= product.name %></b> <br /> 
 						<small><%= product.description %> <br /></small>
 						<strong><%= number_to_currency(product.price) %> </strong><br />
-						
 						<%= form_for :cart, :url => { :controller => "Catalog", :action => "add_to_cart", :id => product.id } do %>
 							Quantity:<%= number_field_tag(:how_many, 1, :in => 1...10000) %><br />
-							<%= submit_tag "Add to cart", :disable_with => 'Please wait...', :name => nil, :id => "butt" %><br />
+							<%= submit_tag "Add to cart", :disable_with => 'Please wait...', :name => nil, :style => 'color:white', :class => 'cool_button' %>
+							<br />
 							<small><%= link_to "Show cart", :action => :display_cart %></small>
 						<% end %>
 						

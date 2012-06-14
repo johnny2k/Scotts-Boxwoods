@@ -1,0 +1,22 @@
+<div id="log_in_form">
+	<table class="cool_table">
+		<th class="white">Log in</th>
+		<%= form_tag sessions_path do %>
+			<tr>
+				<td class="cool_table_data">
+					<%= text_field_tag :email, params[:email], :placeholder => "Email" %>
+				</td>
+			</tr>
+			<tr>
+				<td class="cool_table_data">
+					<%= password_field_tag :password, params[:password], :placeholder => "Password" %>
+				</td>
+			</tr>	
+			<tr>
+				<td class="cool_table_data">
+					<%= submit_tag("Log in") %>
+				<% end %> 
+					<%= button_to("Register", new_user_path) %>
+			</tr>
+		</table>
+</div>

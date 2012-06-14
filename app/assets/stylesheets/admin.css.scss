@@ -14,9 +14,12 @@ td.tool_links {
 	height: 30px;
 	background-color: #30192B;
 	text-align: center;
+	border-radius: 5px;
 }
 
 #admin_info {
+	width: 90%;
+	margin: 0 0 0 20px;
 	text-align: center;
 	color: white;
 	background-color: #30192B;
@@ -24,9 +27,12 @@ td.tool_links {
 	border-color: pink;
 	border-width: 3px;
 	padding: 5px;
-	border-radius: 15px;
+	border-radius: 5px;
 	position: relative;
 	top: -20px;
+	border-top-style: solid;
+	border-top-width: 2px;
+	border-top-color: white;
 }
 
 a.admin {

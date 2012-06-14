@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #cart {
-	padding: 25px;
+	padding: 45px;
 	position: relative;
 	float: right;
 }
@@ -19,6 +19,7 @@ tr.pretty_row {
 }
 
 #cart_table {
+	width: 450px;
 	background-color: #D8D8D8;
 	border-style: solid;
 	border-width: 2px;
@@ -31,18 +32,23 @@ tr.pretty_row {
 }
 
 
-#catalog {
+#catalog_table {
+	text-align: center;
 	position: relative;
-	left: 20px;
+	left: 50px;
 	width: 400px;
 	z-index: 1;
+	padding: 10px;
+	margin: 20px;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #99CC99;
 }
 
 #cart_indicator {
-	z-index: 1;
-	position: relative;
-  left: -180px;
-	top: 40px;
+	position: absolute;
+  top: 5px;
+	z-index: 300;
 }
 
 li.horizontal {

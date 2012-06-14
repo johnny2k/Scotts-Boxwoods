@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+
+	skip_before_filter :require_login, :only [:index]
 	def index 
 		@links = Link.all
 		respond_to do |format|

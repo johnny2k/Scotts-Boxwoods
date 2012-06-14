@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
-  # GET /orders
+ 
+  skip_before_filter :require_login, :only => [:new, :create]	
+	# GET /orders
   # GET /orders.json
   def index
     @orders = Order.all

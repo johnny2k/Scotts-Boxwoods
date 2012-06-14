@@ -1,11 +1,7 @@
 class Admin::ProductsController < ApplicationController
 
-	#USERS = { "lifo" => "world" }
-
-	#before_filter :authenticate
-
 	def index
-		@products = Product.all
+		@products = Product.order("category DESC")
 
 		respond_to do |format|
 			format.html # index.html.erb
@@ -72,13 +68,4 @@ class Admin::ProductsController < ApplicationController
 	def edit
 		@product = Product.find(params[:id])
 	end
-  
-  private 
-
-	def authenticate
-		authenticate_or_request_with_http_digest do |username|
-			USERS[username]
-		end
-	end
-
 end

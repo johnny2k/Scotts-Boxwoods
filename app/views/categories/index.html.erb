@@ -1,9 +1,9 @@
 <% @categories.each do |category| %>
-	<table id="category_table">
+	<table class="cool_table">
 		<tr>
-			<td><%= category.name %></td>
-			<td><%= link_to "Edit", edit_category_path(category) %></td>
-			<td><%= link_to "Destroy", category, :confirm => 'Are you sure you want to destroy this category? It might remove all the links in it as well.', :method => :delete %></td>
+			<td class="cool_table_data"><%= category.name %></td>
+			<td class="cool_table_data"><%= link_to "Edit", edit_category_path(category), :style => 'color:white' %></td>
+			<td class="cool_table_data"><%= link_to "Destroy", category, :confirm => 'Are you sure you want to destroy this category? It might remove all the links in it as well.', :method => :delete, :style => 'color:red' %></td>
 		</tr>
 <% end %>
 </table>

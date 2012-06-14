@@ -1,5 +1,5 @@
 class HedgePlannerController < ApplicationController
-	
+  skip_before_filter :require_login	
 	def index 
 		respond_to do |format|
 			format.html 
