@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #info {
-	float: left;
 	position: relative;
 	text-align: center;
 	padding: 20px;
@@ -17,10 +16,9 @@
 }
 
 #home_picture {
-	float: left;
 	position: relative;
-	top: -20px;
-	margin: 90px;
+	left: 500px;
+	top: -400px;
 	border-style: solid;
 	border-color: #002400;
 	border-width: 2px;
@@ -31,6 +29,11 @@
 
 #about_this_site {
 	position: relative;
-	top: -40px;
-	text-align: center;
+	text-align: left;
+	margin: 20px 0 -600px 0;
+	padding: 20px;
+	top: -300px;
+	color: white;
+	background-color: #003300;
+	margin: 10px 0px;
 }

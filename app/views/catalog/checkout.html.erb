@@ -1,7 +1,7 @@
 <%= render :partial => "display_cart" %>
 
 <div id="order_form">
-	<%= form_tag(:controller => "catalog", :action => "create_order") do %>
+	<%= form_for @order do %>
 		<% if @order.errors.any? %>
 			<div id="error_explanation">
 				<h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -14,25 +14,26 @@
 			</div>
 		<% end %>
 
-			<div class="field">
+			<div>
 				<%= label_tag :name %><br />
-				<%= text_field(:order, :name, :placeholder => "Your name" ) %>
+				<%= text_field(:order, :name) %>
 			</div>
-			<div class="field">
+			<div>
 				<%= label_tag :phone %><br />
 				<%= telephone_field(:order, :phone, :placeholder => "nnn-nnn-nnnn" ) %>
 			</div>
-			<div class="field">
+			<div>
 				<%= label_tag :email %><br />
-				<%= email_field(:order, :email, :placeholder => "youremail@address.com") %>
+				<%= email_field(:email, :placeholder => "youremail@address.com") %>
 				</div>
-			<div class="field">
+			<div>
 				<%= label_tag :address %><br />
-				<%= text_field(:order, :address, :placeholder => "If we're delivering we need an address.") %>
+				<%= text_area :address, nil, :size => "25x5" %>
+
 			</div>
-			<div class="field">
+			<div>
 				<%= label_tag "Need irrigation services?" %><br />
-				<%= check_box(:order, :irrigation) %>
+				<%= check_box_tag(:irrigation) %>
 			</div>
 
 			<%= submit_tag "Submit order" %>

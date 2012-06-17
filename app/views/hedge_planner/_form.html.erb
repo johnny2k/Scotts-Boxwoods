@@ -1,4 +1,4 @@
-<div class="hedgeplan">
+<div id="hedge_plan">
 	<%= form_tag("/hedge_planner/plan_hedge") do %>
     <%= label_tag(:pot_size, "Select a pot size") %>	
 		<%= select_tag(:pot_size, options_for_select([['1-Gallon', 1], ['5-gallon', 2]], 2)) %>
@@ -28,9 +28,7 @@
     <%= text_field_tag(:years) %><br />
 		
 		<%= button_tag 'Submit' %>
-
 	<% end %>
-
 </div>
 
 <div class="plan_result">

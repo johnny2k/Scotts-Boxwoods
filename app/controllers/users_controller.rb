@@ -50,7 +50,7 @@ class UsersController < ApplicationController
 
 	def edit
     @user = User.find(params[:id])
-	  if @user.user_type = 2
+	  if @user.user_type == 2
 	 	  @type = "Admin User"
 	  else
 		  @type = "Regular User"

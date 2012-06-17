@@ -1,9 +1,8 @@
-<h1 id="hedge_plan_header">Hedge Planner</h1>
 	<% if flash[:hedge_planner_results] -%>
 		<div id="plan_flash"><%= flash[:hedge_planner_results] %></div>
 	<% end -%>
 <div id="planner_instructions">
-	<h2>Instructions:</h2>
+	<h2 class="dark">Instructions:</h2>
 
 	
 	<p class="cool">Use the "Hedge Planner" to estimate how many trees you might need to create the hedge of your dreams.</p>
@@ -17,8 +16,6 @@
 	
 	<p>The longer you wait the fewer trees you need but the average growth is eight inches per year so maybe you can't wait and need that perfect hedge now. Leave the "gap" and "years" fields blank if you're that impatient. </p>
 </div>
-
-<%= csrf_meta_tag %>
 
 <div id="planner">
 	<%= render 'form' %>

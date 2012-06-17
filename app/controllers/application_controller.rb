@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def require_login
-		unless logged_in?
+		unless logged_in? and is_admin?
 				flash[:error] = "You need to log in to do that."
 				redirect_to new_session_path
 		end
@@ -20,8 +20,13 @@ class ApplicationController < ActionController::Base
 		!!current_user
 	end
 
-	def is_admin
-		puts "yes"
+	def is_admin?
+		@user = current_user
+		if @user.user_type == 2
+			true
+		else 
+			nil
+		end
 	end
 
 	protected

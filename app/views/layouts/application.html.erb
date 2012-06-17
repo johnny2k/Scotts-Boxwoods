@@ -26,9 +26,7 @@
 		<%= render :partial => "catalog/cart_indicator" %>
 	</div>
 	
-
-	
-	<% if current_user %>
+	<% if current_user and current_user.user_type == 2 %>
 	<div id="admin_links">
 		<table class="cool_table">
 			<th class="white"><b>Admin</b></th>
@@ -44,9 +42,9 @@
 	<div id="side_bar_links">
 		<%= render 'links/side_links' %>
 	</div>	
-	</div>
+</div>
 
-	<div id="right_side">	
+<div id="right_side">	
 	<div id="logo">
 		<%= image_tag("minibuxus.png") %>
 	</div>	
@@ -54,14 +52,14 @@
 		<div id="links">
 			<ul id="link_list">
 				<li class="button"><%= link_to "About Boxwoods", "/", { :style => 'color: white', :class => 'white' }%></li>
-				<li class="button"><%= link_to "Forum", "http://www.reddit.com/r/horticulture", { :style => 'color: white', :class => 'styled' }%></li>
+				<li class="button"><%= link_to "Forum", "http://www.reddit.com/r/horticulture", { :style => 'color: white', :class => 'white' }%></li>
 				<li class="button"><%= link_to "Catalog", catalog_index_path, { :style => 'color: white', :class => 'white' }%></li>
 				<li class="button"><%= link_to "Hedge Planner", hedge_planner_index_path, { :style => 'color: white', :class => 'white' }%></li>
 			</ul>
 		</div>		
 		<%= @content_for_layout %>
 			<%= yield %>
-		</div>
 	</div>
+</div>
 </body>
 </html>
