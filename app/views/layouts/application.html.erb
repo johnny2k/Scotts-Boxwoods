@@ -21,11 +21,7 @@
 			<%= render :partial => 'sessions/new' %>
 		<% end %>
 	</div>
-	
-	<div id="cart_indicator">	
-		<%= render :partial => "catalog/cart_indicator" %>
-	</div>
-	
+
 	<% if current_user and current_user.user_type == 2 %>
 	<div id="admin_links">
 		<table class="cool_table">
@@ -45,6 +41,11 @@
 </div>
 
 <div id="right_side">	
+	
+	<div id="cart_indicator">	
+		<%= render :partial => "catalog/cart_indicator" %>
+	</div>
+
 	<div id="logo">
 		<%= image_tag("minibuxus.png") %>
 	</div>	

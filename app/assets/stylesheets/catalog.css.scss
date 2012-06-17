@@ -46,8 +46,10 @@ tr.pretty_row {
 }
 
 #cart_indicator {
-	position: absolute;
-  top: 5px;
+	position: relative;
+	float: right;
+  top: -25px;
+	left: -240px;
 	z-index: 300;
 }
 
