@@ -6,5 +6,4 @@ class Order < ActiveRecord::Base
   validates :phone, :presence => true,
 	  	    :length => { :minimum => 9 },
 		    :format => { :with => /\A\d+[-]?\d+[-]?\d+\Z/ }
-	validates :email, :address, :presence => true
 end

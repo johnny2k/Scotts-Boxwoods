@@ -60,9 +60,9 @@ class CatalogController < ApplicationController
 		@order.cart_items << @cart.items
 		if @order.save
 			@cart.empty!
-		flash[:notice] = 'Thank you for your order.'
-		@order = nil
-		redirect_to catalog_index_path
+			flash[:notice] = 'Thank you for your order.'
+			@order = nil
+			redirect_to catalog_index_path
 		else
 			render(:action => 'checkout')
 		end
