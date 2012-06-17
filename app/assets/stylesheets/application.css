@@ -38,7 +38,6 @@
 
 body {
 	background-color: Gainsboro;
-  
 	width: 1000px; 
 	padding: 0 200px;
 	position: relative;
@@ -129,12 +128,10 @@ input.cool_button {
 	top: 0;
 	width: 10%;
 	height: 100%;
-
 }
 
 #right_side {
 	position: absolute;
-	right: 190px;
 	top: 45px;
 	width: 90%;
 	height: 100%;
