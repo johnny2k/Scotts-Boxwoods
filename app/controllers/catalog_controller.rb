@@ -58,6 +58,7 @@ class CatalogController < ApplicationController
 		@cart = find_cart
 		@order = Order.new(params[:order])
 		@order.cart_items << @cart.items
+		@order.total_price = @cart.total_price
 		if @order.save
 			@cart.empty!
 			flash[:notice] = 'Thank you for your order.'

@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :name, :phone, :email, :address, :customer_id, :irrigation
+  attr_accessible :name, :phone, :email, :address, :customer_id, :irrigation, :total_price
   has_many :cart_items
   validates_associated :cart_items
 	validates :name, :presence => true

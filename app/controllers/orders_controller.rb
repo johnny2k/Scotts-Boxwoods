@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
   # GET /orders/1.json
   def show
     @order = Order.find(params[:id])
-
+		@cart_items = CartItem.find_all_by_order_id(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @order }
@@ -78,7 +78,7 @@ class OrdersController < ApplicationController
     @order.destroy
 
     respond_to do |format|
-      format.html { redirect_to orders_url }
+      format.html { redirect_to orders_path }
       format.json { head :no_content }
     end
   end

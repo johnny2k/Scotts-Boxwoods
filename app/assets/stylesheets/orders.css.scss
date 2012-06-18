@@ -15,3 +15,44 @@
 	left: 680px;
 	top: 90px;
 }
+
+#order_table {
+	width: 600px;
+	position: relative;
+	left: 20%;
+
+	td {
+		margin: 2px;
+		padding: 3px;
+	}
+}
+
+#edit_order {
+	color: white;
+	position: relative; 
+	margin: 20px;
+}
+
+#show_order {
+	color: white;
+	background-color: #003300;	
+	width: 300px;
+	margin: 10px 50px;
+	padding: 5px;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 5px;
+}
+
+#order_price_table {
+	position: relative;
+	border-color: white;
+	top: -270px;
+	left: 400px;
+}
+	
+#edit_and_back {
+	text-align: center;
+	position: relative;
+	top: -250px;
+}

@@ -2,16 +2,10 @@ Plants::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
-
   get "category/new"
-
   get "category/edit"
-
   get "category/remove"
-
 	get "category/create"
-
-  #get "order/create_order" => "orders#create_order"
   get "home/index"
 	get "admin/index" => "admin#index"
   get "catalog/index"
@@ -25,7 +19,7 @@ Plants::Application.routes.draw do
 		resources :products
 		resources :categories
 	end
-  
+  match "/orders(/:id)" => "orders#show"
 	match ':controller(/:action(/:id))'
 
   # The priority is based upon order of creation:
