@@ -54,7 +54,7 @@ class CatalogController < ApplicationController
 		session[:cart] ||= Cart.new
 	end
 
-	def create_order
+	def create
 		@cart = find_cart
 		@order = Order.new(params[:order])
 		@order.cart_items << @cart.items

@@ -1,7 +1,7 @@
 <%= render :partial => "display_cart" %>
 
 <div id="order_form">
-	<%= form_for @order do %>
+	<%= form_tag(:action => 'create', :controller => 'catalog') do %>
 		<% if @order.errors.any? %>
 			<div id="error_explanation">
 				<h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
